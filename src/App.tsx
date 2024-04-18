@@ -10,7 +10,7 @@ function App() {
     });
   return (
     <>
-        <div>{data?.Header}</div>
+        { data?.map(news => (<p>{news.Header}</p>))}
     </>
   )
 }
