@@ -1,6 +1,6 @@
 import axios, {AxiosInstance} from "axios";
 
-export const Auth_URL: string = 'http://localhost:8080/'
+export const Auth_URL: string = 'http://dev.lemonbrick.by/api/'
 
 export const api: AxiosInstance = axios.create({
     withCredentials: true,
