@@ -16,7 +16,7 @@ function App() {
     }, [data])
   return (
     <>
-        { data?.Header }
+        <p>{ data?.Header }</p>
 
     </>
   )
