@@ -1,0 +1,64 @@
+.bg {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100%;
+}
+.wraper {
+  display: flex;
+  margin-top: 1vh;
+  .paginate {
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    margin-top: 2vh;
+    justify-content: center;
+  }
+  .plates {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+.paginates {
+  display: flex;
+  background-color: #fa9707;
+  color: white;
+  width: 1.5vw;
+  height: 3vh;
+  border-radius: 5px;
+  margin-bottom: 1vh;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  .paginates_item {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+.main {
+  display: flex;
+  width: 92.4%;
+  height: 8vh;
+  background-color: #ffffff;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  margin-left: 2.5vw;
+  align-items: center;
+  overflow-y: auto;
+  border-radius: 5px;
+  .id {
+    margin-left: 1vw;
+    width: 1.5vw;
+  }
+  .logo {
+    margin-left: 1vw;
+  }
+  .username {
+    margin-left: 1vw;
+    width: 7vw;
+  }
+  .uuid {
+    margin-left: 2vw;
+  }
+
+}

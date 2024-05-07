@@ -24,7 +24,7 @@ export interface NewsComments {
 
 export interface FullNews {
     id: number
-    Header: string
+    header: string
     pictureURL: string
     miniText: string
     text: string

@@ -7,7 +7,7 @@ class NewsService {
         return api.get<MiniNews[]>(`/news/page/${pageId}`);
     }
     async getFullNews(Id: string): Promise<AxiosResponse<FullNews>> {
-        return api.get<FullNews>(`/news/id/${Id}`);
+        return api.get<FullNews>(`news/id/${Id}`);
     }
 }
 
