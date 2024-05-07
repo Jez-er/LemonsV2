@@ -1,0 +1,18 @@
+.main {
+  width: 80%;
+  height: 7vh;
+  padding-left: 0.5vw;
+  background-color: #cccccc;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  .username {
+    margin-left: 0.7vw;
+  }
+  .thema {
+    margin-left: auto;
+    margin-right: 1vw;
+  }
+}

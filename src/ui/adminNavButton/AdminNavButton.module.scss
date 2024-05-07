@@ -1,0 +1,38 @@
+
+.button {
+  //background-color: aqua;
+  padding-left: 1vw;
+  width: 70%;
+  height: 5vh;
+  margin-top: 1.5vh;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  opacity: 0.5;
+  color: black;
+}
+.activeButton {
+  background: rgb(221,196,16);
+  background: linear-gradient(90deg, rgba(221,196,16,1) 0%, rgba(226,176,0,1) 56%, rgba(238,141,0,1) 100%);
+  padding-left: 1vw;
+  width: 70%;
+  height: 7vh;
+  padding-top: 1vh;
+  padding-bottom: 0.7vh;
+  border-radius: 5px;
+  margin-top: 1.5vh;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+}
+.text {
+  padding-left: 0.5vw;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 0.9em;
+}
