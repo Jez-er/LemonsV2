@@ -1,0 +1,14 @@
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  .sidebar {
+    width: 18%;
+    height: 100%;
+  }
+  .outlet {
+    background-color: #cccccc;
+    width: 100%;
+    height: 100%;
+  }
+}
