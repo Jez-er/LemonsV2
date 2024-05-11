@@ -1,25 +1,41 @@
-import {useQuery} from "@tanstack/react-query";
-import NewsService from "./https-api/service/news.service.ts";
-import {useEffect} from "react";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {MainPage} from "./pages/MainPage.tsx";
+import {AuthPage} from "./pages/AuthPage.tsx";
+import {AdminPage} from "./pages/AdminPage.tsx";
+import {AdminLayout} from "./components/layouts/AdminLayout.tsx";
+import {UserManager} from "./pages/Admin/Users/UserManager.tsx";
+import {UserProfileAdmin} from "./components/UserProfileAdmin/UserProfileAdmin.tsx";
 
 function App() {
-    const {data} = useQuery({
-        queryKey: ['News'],
-        queryFn: () => NewsService.getFullNews("33").then((res) =>
-            res.data,
-        ),
-
-    });
-
-    useEffect(()=>{
-        console.log(data)
-    }, [data])
-  return (
-    <>
-        { data?.Header }
-
-    </>
-  )
+    const router = createBrowserRouter([
+        {
+            path: '/',
+            element: <MainPage />
+        },
+        {
+            path: '/auth',
+            element: <AuthPage />
+        },
+        {
+            path: '/admin',
+            element: <AdminLayout />,
+            children: [
+                {
+                    index: true,
+                    element: <AdminPage />
+                },
+                {
+                    path: 'users/manager',
+                    element: <UserManager />
+                },
+                {
+                    path: 'users/manager/:uuid',
+                    element: <UserProfileAdmin />
+                }
+            ]
+        }
+    ]);
+    return <RouterProvider router={router} />
 }
 
 export default App
