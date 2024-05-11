@@ -22,5 +22,16 @@
   .uuid {
     margin-left: 2vw;
   }
-
+  .btn {
+    background-color: #fa9707;
+    margin-left: auto;
+    margin-right: 1vw;
+    width: 2vw;
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+  }
 }
