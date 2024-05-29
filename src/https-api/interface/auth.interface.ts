@@ -3,7 +3,7 @@ export interface IAuth {
     refreshToken: string
 }
 
-interface UserGroups {
+export interface IUserGroups {
     id: number
     groupName: string
 }
@@ -14,7 +14,7 @@ export interface IUserInfo {
     gender: string
     status: string
     registrationDate: string
-    groups: UserGroups[]
+    groups: IUserGroups[]
     assets: {
         skin: {
             url: string
@@ -27,4 +27,10 @@ export interface IUserInfo {
             metadata: unknown
         }
     }
+}
+
+export interface IBanUser {
+    reason: string
+    endDate: string | null
+    isHardware: boolean
 }

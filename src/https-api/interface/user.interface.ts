@@ -27,3 +27,8 @@ export interface IAllUser {
     "totalPages": number,
     "totalElements": number
 }
+
+export interface IAddGroup {
+    days: string
+    priority: string
+}
