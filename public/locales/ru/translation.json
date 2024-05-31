@@ -1,0 +1,58 @@
+{
+  "main": {
+    "search": "Поиск",
+    "add": "Добавить",
+    "title": "Название",
+    "successful": "Успешно"
+  },
+  "error": {
+    "isEmpty": "Не должно быть пустым",
+    "isError": "Произошла ошибка"
+  },
+  "admin": {
+    "SideBar": {
+      "Users": "Пользователи",
+      "UserManager": "Менеджер пользователей",
+      "Bans": "Бан-панель",
+      "Content": "Контент",
+      "Shop": "Магазин"
+    },
+    "User": {
+      "Manager": {
+        "UserProfile": {
+          "username": "Имя пользлвателя",
+          "registrationData": "Дата грестрации",
+          "status": "Статус",
+          "deleteStatus": "Удалить статус",
+          "ban": "Забанить",
+          "unBan": "Розбанить",
+          "skin": "Скин",
+          "cape": "Плащ",
+          "Modal": {
+            "Title": "Бан пользователя",
+            "Reason": "Причина",
+            "ForeverBan": "Бан на всегда",
+            "IronBan": "Бан по железу"
+          },
+          "UserGroups": {
+            "ADMIN": "Администратор",
+            "BUILDER": "Архитектор",
+            "MODERATOR": "Модератор",
+            "HELPER": "Хелпер",
+            "HD": "HD скин",
+            "PLAYER": "Игрок",
+            "Tester": "Тестер",
+            "Modal": {
+              "Title": "Добавление группы",
+              "dayToFinish": "Дней до истичения",
+              "Priority": "Приоритет"
+            }
+          }
+        }
+      }
+    },
+    "ShopPage": {
+      "CreateItem": "Создание товара"
+    }
+  }
+}
