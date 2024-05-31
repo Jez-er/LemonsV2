@@ -20,12 +20,12 @@
     "User": {
       "Manager": {
         "UserProfile": {
-          "username": "Имя пользлвателя",
-          "registrationData": "Дата грестрации",
+          "username": "Имя пользователя",
+          "registrationData": "Дата регистрации",
           "status": "Статус",
           "deleteStatus": "Удалить статус",
           "ban": "Забанить",
-          "unBan": "Розбанить",
+          "unBan": "Разбанить",
           "skin": "Скин",
           "cape": "Плащ",
           "Modal": {

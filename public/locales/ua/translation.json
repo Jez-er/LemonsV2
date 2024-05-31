@@ -2,17 +2,17 @@
   "main": {
     "search": "Пошук",
     "add": "Додати",
-    "title": "Название",
-    "successful": "Успешно"
+    "title": "Назва",
+    "successful": "Вдало"
   },
   "error": {
-    "isEmpty": "Не должно быть пустым",
-    "isError": "Произошла ошибка"
+    "isEmpty": "Не має бути порожнім",
+    "isError": "Виникла помилка"
   },
   "admin": {
     "SideBar": {
-      "Users": "Пользователи",
-      "UserManager": "Менеджер пользователей",
+      "Users": "Користувачі",
+      "UserManager": "Менеджер користувачів",
       "Bans": "Бан-панель",
       "Content": "Контент",
       "Shop": "Магазин"
@@ -20,39 +20,39 @@
     "User": {
       "Manager": {
         "UserProfile": {
-          "username": "Имя пользлвателя",
-          "registrationData": "Дата грестрации",
+          "username": "Ім`я користувача",
+          "registrationData": "Дата реєстрації",
           "status": "Статус",
-          "deleteStatus": "Удалить статус",
-          "ban": "Забанить",
-          "unBan": "Розбанить",
-          "skin": "Скин",
+          "deleteStatus": "Видалити статус",
+          "ban": "Забанити",
+          "unBan": "Розбанити",
+          "skin": "Скін",
           "cape": "Плащ",
           "Modal": {
-            "Title": "Бан пользователя",
+            "Title": "Бан користувача",
             "Reason": "Причина",
-            "ForeverBan": "Бан на всегда",
-            "IronBan": "Бан по железу"
+            "ForeverBan": "Бан на завжди",
+            "IronBan": "Бан по залізу"
           },
           "UserGroups": {
-            "ADMIN": "Администратор",
-            "BUILDER": "Архитектор",
+            "ADMIN": "Адміністратор",
+            "BUILDER": "Архітектор",
             "MODERATOR": "Модератор",
             "HELPER": "Хелпер",
-            "HD": "HD скин",
-            "PLAYER": "Игрок",
+            "HD": "HD скін",
+            "PLAYER": "Гравець",
             "Tester": "Тестер",
             "Modal": {
-              "Title": "Добавление группы",
-              "dayToFinish": "Дней до истичения",
-              "Priority": "Приоритет"
+              "Title": "Додавання групи",
+              "dayToFinish": "Днів до закінчення",
+              "Priority": "Пріоритет"
             }
           }
         }
       }
     },
     "ShopPage": {
-      "CreateItem": "Создание товара"
+      "CreateItem": "Створення товару"
     }
   }
 }
