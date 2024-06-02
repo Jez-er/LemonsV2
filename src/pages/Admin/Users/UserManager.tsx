@@ -5,11 +5,14 @@ import UserService from "../../../https-api/service/user.service";
 import { IAllUser } from "../../../https-api/interface/user.interface";
 import {AtSign, Search, User} from "lucide-react";
 import Loader from "../../../components/ui/loader";
+import {useTranslation} from "react-i18next";
 
 const UserManager: React.FC = () => {
     const [currentPage, setCurrentPage] = useState<number>(0);
     const [searchData, setSearchData] = useState<string>('');
     const [searchType, setSearchType] = useState<'NIK' | 'EMAIL'>('NIK')
+
+    const {t} = useTranslation()
 
     const { data, refetch, isLoading } = useQuery<IAllUser>({
         queryKey: ['Users', searchData, currentPage],
@@ -52,7 +55,7 @@ const UserManager: React.FC = () => {
                     <input
                         type="text"
                         className={'pl-3.5 dark:text-white border-transparent outline-none outline-transparent bg-transparent h-full w-11/12 placeholder:opacity-80 placeholder:text-black dark:placeholder:text-white'}
-                        placeholder="Поиск"
+                        placeholder={t('main.search')}
                         onChange={(e) => {
                             setSearchData(e.target.value);
                             setCurrentPage(0);

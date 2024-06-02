@@ -8,6 +8,7 @@ import {UserControler} from "./widgets/UserControler.tsx";
 import {UserGroups} from "./widgets/UserGroups.tsx";
 import {useEffect} from "react";
 import Notification from "../notification/Notification.tsx";
+import {t} from "i18next";
 
 const UserProfileAdmin = () => {
 
@@ -35,7 +36,7 @@ const UserProfileAdmin = () => {
         refetch()
     }, [data?.data.assets.skin, data?.data.assets.cape]);
 
-    return (<div className={'h-full w-full'}>
+    return <div className={'h-full w-full'}>
         <div className={'flex h-55%'}>
             <div className={'bg-white dark:bg-black m-4 flex flex-col items-center rounded-xl'}>
                 <UserSkin
@@ -43,10 +44,10 @@ const UserProfileAdmin = () => {
                     capeUrl={typeof data?.data.assets.cape === 'string' ? data?.data.assets.cape : data?.data.assets.cape?.url}/>
                 <div className={'flex justify-center gap-2 mb-10'}>
                     <div onClick={DeleteSkin}>
-                        <DeleteButton title={'Скин'} width={4} height={4.5}/>
+                        <DeleteButton title={t('admin.User.Manager.UserProfile.skin')} width={4} height={4.5}/>
                     </div>
                     <div onClick={DeleteCape}>
-                        <DeleteButton title={'Плащ'} width={4} height={4.5}/>
+                        <DeleteButton title={t('admin.User.Manager.UserProfile.cape')} width={4} height={4.5}/>
                     </div>
                 </div>
             </div>
@@ -66,7 +67,7 @@ const UserProfileAdmin = () => {
         </div>
         {isSuccess ? <Notification type={'Done'} text={'Ассет удалён'}/> : isError ?
             <Notification type={'Error'} text={'Произошла ошибка'}/> : null}
-    </div>)
+    </div>
 }
 
 export {UserProfileAdmin}

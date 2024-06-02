@@ -7,6 +7,7 @@ import ModalInput from "../../ui/Modal/ModalInput/ModalInput.tsx";
 import {useMutation} from "@tanstack/react-query";
 import AdminService from "../../../https-api/service/admin.service.ts";
 import Notification from "../../notification/Notification.tsx";
+import {t} from "i18next";
 
 interface BanUserProps {
     Props: ModalProps
@@ -45,10 +46,10 @@ const BanUser: FC<BanUserProps> = ({Props, userId}) => {
                 mutate(result)
                 Props.onClose()
             } else  {
-                setDataError('Поле должно быть заполнено')
+                setDataError(t('error.isEmpty'))
             }
         } else {
-            setReasonError('Поле должно быть заполнено')
+            setReasonError(t('error.isEmpty'))
         }
     }
 
@@ -57,9 +58,9 @@ const BanUser: FC<BanUserProps> = ({Props, userId}) => {
 
     return (
         <Modal {...Props} >
-            <Modal.Title>Бан пользователя</Modal.Title>
+            <Modal.Title>{t('admin.User.Manager.UserProfile.Modal.Title')}</Modal.Title>
             <Modal.Body>
-                <ModalInput title={'Причина'} state={Reason} onChange={(e) => setReason(e.target.value)} error={reasonError} />
+                <ModalInput title={t('admin.User.Manager.UserProfile.Modal.Reason')} state={Reason} onChange={(e) => setReason(e.target.value)} error={reasonError} />
                 <input
                     type={'datetime-local'}
                     className={'pl-3 mt-2 rounded-xl outline-none outline-transparent bg-gray dark:bg-dark-gray h-9 w-5/5 placeholder:opacity-80  placeholder:text-black dark:placeholder:text-white border-transparent dark:text-white'}
@@ -70,15 +71,15 @@ const BanUser: FC<BanUserProps> = ({Props, userId}) => {
                 <div className={'flex items-center mt-5'}>
                     <div onClick={() => setForeverBan(!foreverBan)}
                          className={cn('w-6 h-6 rounded-xl mr-4', foreverBan ? 'bg-green' : 'bg-red')}></div>
-                    <span>Бан на всегда</span>
+                    <span>{t('admin.User.Manager.UserProfile.Modal.ForeverBan')}</span>
                 </div>
                 <div className={'flex items-center mt-5'}>
                     <div onClick={() => setIronBan(!ironBan)}
                          className={cn('w-6 h-6 rounded-xl mr-4', ironBan ? 'bg-green' : 'bg-red')}></div>
-                    <span>Бан по железу</span>
+                    <span>{t('admin.User.Manager.UserProfile.Modal.IronBan')}</span>
                 </div>
             </Modal.Body>
-            <Modal.Footer><div onClick={BanHendler}><ModalButton title={'Забанить'}/></div></Modal.Footer>
+            <Modal.Footer><div onClick={BanHendler}><ModalButton title={t('admin.User.Manager.UserProfile.ban')}/></div></Modal.Footer>
             {isPending ? <Notification type={'Done'} text={'Пользователь забанен'} /> : isError ? <Notification type={"Error"} /> : null}
 
         </Modal>

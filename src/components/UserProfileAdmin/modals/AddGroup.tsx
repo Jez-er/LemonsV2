@@ -5,6 +5,7 @@ import ModalInput from "../../ui/Modal/ModalInput/ModalInput.tsx";
 import ModalButton from "../../ui/Modal/ModalButton/ModalButton.tsx";
 import {useMutation} from "@tanstack/react-query";
 import UserService from "../../../https-api/service/user.service.ts";
+import {t} from "i18next";
 
 
 interface AddGroupProps {
@@ -44,13 +45,13 @@ const AddGroup: FC<AddGroupProps> = ({Props, userId}) => {
                     setDays('0')
                     setPriority('0')
                 } else {
-                    setPriorityError('Не должно быть пустым')
+                    setPriorityError(t('error.isEmpty'))
                 }
             } else {
-                setDaysError('Не должно быть пустым')
+                setDaysError(t('error.isEmpty'))
             }
         } else {
-            setNameError('Не должно быть пустым')
+            setNameError(t('error.isEmpty'))
         }
 
     }
@@ -62,16 +63,16 @@ const AddGroup: FC<AddGroupProps> = ({Props, userId}) => {
     return (
         <Modal {...Props}>
             <Modal.Title>
-                Добавление группы
+                {t('admin.User.Manager.UserProfile.UserGroups.Modal.Title')}
             </Modal.Title>
             <Modal.Body>
-                <ModalInput title={'Название'} state={groupName} onChange={(e) => setName(e.target.value)} error={NameError}/>
-                <ModalInput title={'Дней до истичения'} state={days} onChange={(e) => setDays(e.target.value)} error={DaysError}/>
-                <ModalInput title={'Приоритет'} state={priority} onChange={(e) => setPriority(e.target.value)} error={PriorityError}/>
+                <ModalInput title={t('main.title')} state={groupName} onChange={(e) => setName(e.target.value)} error={NameError}/>
+                <ModalInput title={t('admin.User.Manager.UserProfile.UserGroups.Modal.dayToFinish')} state={days} onChange={(e) => setDays(e.target.value)} error={DaysError}/>
+                <ModalInput title={t('admin.User.Manager.UserProfile.UserGroups.Modal.Priority')} state={priority} onChange={(e) => setPriority(e.target.value)} error={PriorityError}/>
             </Modal.Body>
             <Modal.Footer>
                 <div onClick={AddGroup}>
-                    <ModalButton title={'Добавить'}/>
+                    <ModalButton title={t('main.add')}/>
                 </div>
             </Modal.Footer>
         </Modal>

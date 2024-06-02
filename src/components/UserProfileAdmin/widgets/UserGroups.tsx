@@ -7,6 +7,7 @@ import useModal from "../../../hooks/useModal.ts";
 import {AddGroup} from "../modals/AddGroup.tsx";
 import Notification from "../../notification/Notification.tsx";
 import {AxiosResponse} from "axios";
+import {t} from "i18next";
 
 interface UserGroupsProps {
     id: number | undefined
@@ -28,21 +29,21 @@ const UserGroups: FC<UserGroupsProps> = ({ data, id, refetch }) => {
     const getCustomValue = (groupName: string) => {
         switch (groupName) {
             case 'ADMIN':
-                return 'Администратор';
+                return t('admin.User.Manager.UserProfile.UserGroups.ADMIN');
             case 'BUILDER':
-                return 'Архитектор';
+                return t('admin.User.Manager.UserProfile.UserGroups.BUILDER');
             case 'MODERATOR':
-                return 'Модератор';
+                return t('admin.User.Manager.UserProfile.UserGroups.MODERATOR');
             case 'HELPER':
-                return 'Хелпер';
+                return t('admin.User.Manager.UserProfile.UserGroups.HELPER');
             case 'HD':
-                return 'Улучшенный скин';
+                return t('admin.User.Manager.UserProfile.UserGroups.HD');
             case 'PLAYER':
-                return 'Обычный игрок';
+                return t('admin.User.Manager.UserProfile.UserGroups.PLAYER');
             case 'Tester':
-                return 'Тестер';
+                return t('admin.User.Manager.UserProfile.UserGroups.Tester');
             default:
-                return 'Обычный игрок';
+                return t('admin.User.Manager.UserProfile.UserGroups.PLAYER');
         }
     };
 
@@ -84,7 +85,7 @@ const UserGroups: FC<UserGroupsProps> = ({ data, id, refetch }) => {
                 )}
             <AddGroup Props={ModalProps} userId={id}/>
             {isSuccess ? <Notification type={'Done'} text={'Группа удалена'} /> : null}
-            {isError ? <Notification type={'Error'} text={'Произошла ошибка'} /> : null}
+            {isError ? <Notification type={'Error'} /> : null}
         </div>
     );
 };

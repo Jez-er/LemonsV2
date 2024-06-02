@@ -6,9 +6,10 @@ interface Skin {
 
 interface AvatarProps {
     skin: Skin;
+    userName: string
 }
 
-const UserAvatar: React.FC<AvatarProps> = ({ skin }) => {
+const UserAvatar: React.FC<AvatarProps> = ({ skin, userName }) => {
     const avatarRef = useRef<HTMLImageElement>(null);
 
     useEffect(() => {
@@ -35,21 +36,18 @@ const UserAvatar: React.FC<AvatarProps> = ({ skin }) => {
                     avatarRef.current.src = canvas.toDataURL("image/png");
                 }
             };
-            img.onerror = function (e) {
-                console.log(e);
-            }
             img.src = skinurl.url;
         }
 
         updateAvatar(skin);
 
-        return () => {
-            // Clean up if needed
-        };
     }, [skin]);
 
-    return (
-        <img style={{ imageRendering: 'pixelated', borderRadius: '20px' }} ref={avatarRef} width={40} />
+    return ( <div>
+            {skin ? <img style={{imageRendering: 'pixelated', borderRadius: '20px'}} ref={avatarRef} width={40}/>
+            : <div className={'rounded-3xl flex justify-center items-center bg-white dark:bg-black dark:text-white w-9 h-9'}>{userName.charAt(0)}</div>}
+        </div>
+
     );
 }
 

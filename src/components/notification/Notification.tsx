@@ -2,6 +2,7 @@ import {FC, useState} from "react";
 import {CircleAlert, CircleCheckBig, CircleX} from "lucide-react";
 import Portal from "../common/Portal.tsx";
 import cn from "classnames";
+import {t} from "i18next";
 
 interface NotificationProps {
     type: 'Done' | 'Warn' | "Error"
@@ -22,7 +23,7 @@ const Notification: FC<NotificationProps> = ({type, text}) => {
             {(type === 'Warn') ? <CircleAlert color="#fc8003" width={28} height={28} /> : null}
             <div className={'w-1 h-9 bg-gray dark:bg-dark-gray mx-3 rounded-xl'} />
             <div style={{marginRight: '0.5vw', maxWidth: '70%'}}>
-                {(type === 'Error') ? 'Произошла ошибка' : text}
+                {(type === 'Error') ? t('error.isError') : (type === 'Done') ? t('main.successful') : text}
             </div>
 
         </div>
