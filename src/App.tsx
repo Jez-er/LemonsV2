@@ -5,8 +5,13 @@ import {AdminPage} from "./pages/AdminPage.tsx";
 import {AdminLayout} from "./components/layouts/AdminLayout.tsx";
 import {UserManager} from "./pages/Admin/Users/UserManager.tsx";
 import {UserProfileAdmin} from "./components/UserProfileAdmin/UserProfileAdmin.tsx";
+import ShopManager from "./pages/Admin/Shop/ShopManager.tsx";
+import {Suspense} from "react";
+
 
 function App() {
+
+
     const router = createBrowserRouter([
         {
             path: '/',
@@ -31,11 +36,19 @@ function App() {
                 {
                     path: 'users/manager/:uuid',
                     element: <UserProfileAdmin />
+                },
+                {
+                    path: 'shop/manager',
+                    element: <ShopManager />
                 }
             ]
         }
     ]);
-    return <RouterProvider router={router} />
+    return (
+        <Suspense fallback={'...loading'}>
+            <RouterProvider router={router} />
+        </Suspense>
+        )
 }
 
 export default App
