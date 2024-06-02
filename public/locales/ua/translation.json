@@ -20,7 +20,7 @@
     "User": {
       "Manager": {
         "UserProfile": {
-          "username": "Ім`я користувача",
+          "username": "Ім'я користувача",
           "registrationData": "Дата реєстрації",
           "status": "Статус",
           "deleteStatus": "Видалити статус",
